@@ -24,21 +24,21 @@ const projects: Project[] = [
     id: 1,
     title: "Nawla Trading PLC",
     description: "This Nawla Trading website showcases products and services with a clean, responsive design.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg", // Ensure the image is in the public folder
     category: "web",
   },
   {
     id: 2,
     title: "Gojo Guest House",
     description: "This guesthouse website highlights services, room options, and amenities.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "web",
   },
   {
     id: 3,
     title: "Brand Clothing",
     description: "Brand Clothing brings you timeless fashion with a modern touch.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "web",
   },
   {
@@ -46,7 +46,7 @@ const projects: Project[] = [
     title: "Heiver Tech",
     description:
       "Provides various technology services and is globally recognized for its outstanding innovations, cutting-edge solutions, and commitment to excellence in the tech industry.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "web",
   },
   {
@@ -54,7 +54,7 @@ const projects: Project[] = [
     title: "ነጋሪት Marketing Agency",
     description:
       "Offers a wide range of digital services, striving to modernize the world by providing innovative and effective marketing solutions.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "web",
   },
   {
@@ -62,7 +62,7 @@ const projects: Project[] = [
     title: "Adape Leather Design",
     description:
       "Specializes in crafting a variety of high-quality leather products, delighting clients with beautiful and expertly handcrafted designs.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "others",
   },
   {
@@ -70,7 +70,7 @@ const projects: Project[] = [
     title: "ShoeIT",
     description:
       "This mobile app is dedicated to shoe sales, offering a clean, user-friendly design. It features easy navigation, comprehensive product details, and a visually appealing layout that enhances the shopping experience.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "mobile",
   },
   {
@@ -78,14 +78,14 @@ const projects: Project[] = [
     title: "Gojo Guest House",
     description:
       "A logo for a guesthouse that gives different kinds of services, showcasing versatility and professionalism.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "logo",
   },
   {
     id: 9,
     title: "Habesha Crowd",
     description: "A logo for a company that provides various services, showcasing versatility and professionalism.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "logo",
   },
   {
@@ -93,7 +93,7 @@ const projects: Project[] = [
     title: "Eromica",
     description:
       "A logo for a woman that is represented by E= Ethiopia, Romi= roman (name of the woman), ca= comes from the last word Africa",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "logo",
   },
   {
@@ -101,7 +101,7 @@ const projects: Project[] = [
     title: "ነጋሪት Marketing Agency",
     description:
       "This one is the logo part for the marketing agency that provides innovative and effective marketing solutions.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "logo",
   },
   {
@@ -109,14 +109,14 @@ const projects: Project[] = [
     title: "Hany Beauty",
     description:
       "A logo for a beauty salon that provides various services, showcasing versatility and professionalism.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "logo",
   },
   {
     id: 13,
     title: "Yegna Dirsha",
     description: "A logo for a company that is worked for their youtube and social media channels.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/agape.jpg?height=300&width=400",
     category: "logo",
   },
 ]
@@ -169,8 +169,15 @@ export default function ProjectsSection() {
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project) => (
             <Card key={project.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <Image
-                src={project.image || "/placeholder.svg"}
+              {/* <Image
+                src={project.image || "/agape.jpg"}
+                alt={project.title}
+                width={400}
+                height={300}
+                className="w-full h-48 object-cover"
+              /> */}
+                            <Image
+                src={project.image}
                 alt={project.title}
                 width={400}
                 height={300}

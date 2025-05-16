@@ -34,7 +34,13 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between px-4 md:px-8 lg:px-12 xl:px-16 max-w-[1400px]">
           <div className="flex items-center gap-6 md:gap-10">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-xl font-bold">IKIM Tech</span>
+                <Image
+                src="/logo.jpg"
+                alt="IKIM Tech Logo"
+                width={180}
+                height={180}
+                className="h-200 w-200 object-contain"
+                />
             </Link>
             <nav className="hidden gap-6 md:flex">
               <Link href="#home" className="text-sm font-medium transition-colors hover:text-white/80">
@@ -84,21 +90,22 @@ export default function Home() {
                     </Button>
                   </Link>
                   <Link href="#contact">
-                    <Button variant="outline" className="border-white text-white hover:bg-white/20">
+                    <Button variant="outline" className="border-white text-black hover:bg-white/20">
                       Get in Touch
                     </Button>
                   </Link>
                 </div>
               </div>
-              <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center">
                 <Image
-                  src="/placeholder.svg?height=400&width=400"
+                  src="/front.jpg?height=400&width=400"
                   alt="Hero Image"
-                  width={500}
-                  height={500}
-                  className="rounded-lg object-cover"
+                  width={1000}
+                  height={1000}
+                  className="rounded-lg object-cover cursor-move"
+                  draggable="true"
                 />
-              </div>
+                </div>
             </div>
           </div>
         </section>
@@ -211,37 +218,37 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-full grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               <TeamMemberCard
-                image="/placeholder.svg?height=200&width=200"
+                image="/miki.jpg?height=200&width=200"
                 name="Mikiyas Taye"
                 role="CEO & Website Developer"
               />
               <TeamMemberCard
-                image="/placeholder.svg?height=200&width=200"
+                image="/miki.jpg?height=200&width=200"
                 name="Amen Dereje"
                 role="Website Developer"
               />
               <TeamMemberCard
-                image="/placeholder.svg?height=200&width=200"
+                image="/miki.jpg?height=200&width=200"
                 name="Betselot Bezuayehu"
                 role="Software Developer"
               />
               <TeamMemberCard
-                image="/placeholder.svg?height=200&width=200"
+                image="/miki.jpg?height=200&width=200"
                 name="Jecoliah Menberu"
                 role="Sales Agent"
               />
               <TeamMemberCard
-                image="/placeholder.svg?height=200&width=200"
+                image="/miki.jpg?height=200&width=200"
                 name="Bisrat Kifle"
                 role="Graphics Designer and Video Editor"
               />
               <TeamMemberCard
-                image="/placeholder.svg?height=200&width=200"
+                image="/miki.jpg?height=200&width=200"
                 name="Tesfahun Gibitan"
                 role="3D and VFX Artist"
               />
               <TeamMemberCard
-                image="/placeholder.svg?height=200&width=200"
+                image="/miki.jpg?height=200&width=200"
                 name="Mikyas Seffi"
                 role="Marketing Consultant"
               />
@@ -321,13 +328,15 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="rounded-lg overflow-hidden mt-6">
-                  <Image
-                    src="/placeholder.svg?height=300&width=500"
-                    alt="Map"
-                    width={500}
-                    height={300}
-                    className="w-full h-auto"
-                  />
+                  <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127587.84794910192!2d38.6521205!3d9.0054016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85c1b2f3c7c7%3A0x7c8f7e8b9b8b8b8b!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2sus!4v1697041234567!5m2!1sen!2sus"
+                  width="700"
+                  height="500"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  className="w-full h-auto"
+                  ></iframe>
                 </div>
               </div>
             </div>
@@ -428,7 +437,7 @@ export default function Home() {
   )
 }
 
-function ServiceCard({ icon, title, description }) {
+function ServiceCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <Card className="flex flex-col items-center text-center p-6 shadow-lg hover:shadow-xl transition-shadow">
       <CardContent className="p-0 space-y-4">
@@ -440,7 +449,7 @@ function ServiceCard({ icon, title, description }) {
   )
 }
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <div className="flex flex-col items-center text-center space-y-4">
       <div className="rounded-full bg-white/10 p-4">{icon}</div>
@@ -452,7 +461,7 @@ function FeatureCard({ icon, title, description }) {
   )
 }
 
-function TeamMemberCard({ image, name, role }) {
+function TeamMemberCard({ image, name, role }: { image: string; name: string; role: string }) {
   return (
     <div className="flex flex-col items-center text-center space-y-4">
       <div className="rounded-full overflow-hidden w-32 h-32 border-4 border-white/20">
